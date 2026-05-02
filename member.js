@@ -4,7 +4,7 @@ function skillsMember() {
         template: 'modules/skills/views/member.html',
         controller: 'SkillsMemberController',
         controllerAs: 'vm',
-        bindToController: true
+        bindToController: true,
         scope: {
             member: '='
         }
