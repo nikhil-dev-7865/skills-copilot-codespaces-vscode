@@ -1,15 +1,18 @@
 // Create web server
 
-const express = require('express');
-const app = express();
+// synthesizing 9/10 Solution
+
+const http = require('http');
+
+const hostname = 'localhost';
 const port = 3000;
 
-// Create a route for the comments page
-app.get('/comments', (req, res) => {
-  res.send('This is the comments page');
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('This is the comments page');
 });
 
-// Start the server                     
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-}   );      
+server.listen(port, hostname, () => {
+  console.log(`Server is running on http://${hostname}:${port}`);
+});
